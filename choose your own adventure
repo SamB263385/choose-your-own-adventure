@@ -1,0 +1,191 @@
+quit = False
+goblinhealth = (12)
+goblinattackdammage = (3)
+if goblinhealth == (0):
+    print("you have defeated the goblin")
+print("welcome to the choose your own adventure game")
+print("choose your statistics with the corasponding numbers")
+print("")
+print("")
+statschoice = input("would you like higher total health, attack damage, investigation or an all rounded character(1,2,3,4)")
+if statschoice == "1":
+    health = (17)
+    attackdamage = (4)
+    investigation = (11)
+    money = (10)
+    print("health = (17)attackdamage = (4)investigation = (11) money = (10)")
+
+if statschoice == "2":
+    health = (9)
+    attackdamage = (9)
+    investigation = (13)
+    money = (10)
+    print("health = (9)attackdamage = (9)investigation = (13) money = (10)")
+
+if statschoice == "3":
+    health = (10)
+    attackdamage = (5)
+    investigation = (17)
+    money = (10)
+    print("health = (10)attackdamage = (5)investigation = (17) money = (10)")
+if statschoice == "4":
+    health = (12)
+    attackdamage = (6)
+    investigation = (14)
+    money = (10)
+    print("health = (12)attackdamage = (6)investigation = (14) money = (10)")
+
+if health == 0:
+    print("end of game")
+    print("you died")
+    quit = True
+   
+print()
+print()
+print("you wake up in the corner of a tavern")
+choice1 = input("what do you do? go upstairs, speak to the bar maid, leave the tavern(1,2,3)")
+if choice1 == "1":
+    choice2 = input("theres a book case in the corner. do you search it or leave it(1,2)")
+    if choice2 == "1":
+        print("you grab a book while leads to a hidden door way")
+        if (investigation) <15:
+                print("you see a large chest in the middle of the hidden room")
+                print("its unlocked, you open the chest to see a book, the book has pages ripped out of it")
+                print("the first page says look up")
+                print("you see hundreds of bats above you fly around the room, you then see a large tounge of  snake")
+                print("the snakes eyes open, its jaws open and closde on you ")
+                print("game over")
+                health = 0
+        if(investigation) >15:
+            print("you see hundreds of bats above you flyaround the room, you then see a large tounge of  snake")
+            print("the snakes eyes open and you run out of the room shutting the door behind you")
+            print("you head downstairs")
+            print()
+            print()
+            choice1 = input("what do you do? go upstairs, speak to the bar maid, leave the tavern(1,2,3)")
+
+    if choice2 == "2":
+        print("you're too scared to go in there")
+        print("as you turn around you see a glimer of metal on the other side of the room")
+        choice3 = input("do you go towards the glimmer or not(1,2)")
+        if choice3 == "1":
+            print("you move some old boxes")
+            print("behind the boxes there's a long sword")
+            attackdamage = attackdamage + 3
+            print ("Your attack damage is now: ",attackdamage)
+            print("this adds 3 more attack damage to your current score")
+            print("you head downstairs")
+            print()
+            print()
+            choice1 = input("what do you do? go upstairs, speak to the bar maid, leave the tavern(1,2,3)")
+        if choice3 == "2":
+            print("you head downstairs")
+            choice1 = input("what do you do? go upstairs, speak to the bar maid, leave the tavern(1,2,3)")
+if choice1 == "2":
+    print("you head to the bar maid")
+    choice4 = input("do you ask for a drink for one silver peice or not(1,2)")
+    if choice4 == "1":
+        money = money - 1
+        print("Your health is now: ",health)
+        print("she gives you the strongest stuff she has")
+        print("you get very drunk after a pint")
+        print("because of this you become less aware of whats around you")
+        investigation = investigation - 4
+        print(investigation)
+        print("your investigation score has gone down by 4 points")
+        print("your investigation is now",investigation)
+        choice1 = input("what do you do? go upstairs, speak to the bar maid, leave the tavern(1,2,3)")
+    if choice4 == "2":
+        print("she tells you about an old tale")
+        print("the old tale is about how in  the year of 1692, an army who is trying to take over the country will try and take of maidenstoke(the village you're in")
+        print("it talks about how there will be a great leader to fight against this army2")
+        print("aparently there is more inforation at the town hall who are looking for a great leader to fight off htis army")
+        print("a young adventurer like you would fit the job perfectly")
+        choice5 = input("do you take up this chalenge or not?(1,2)")
+        if choice5 == "1":
+            print("you leave the tavern")
+            print("there are signs infront of you to head up the hill to get to the town hall")
+            print("there's a chemist on the side of the road")
+            choice6 = input("there are health potions that hes selling for 2 silver pieces, do you take one or not(1,2)")
+            if choice6 == "1":
+                print("you drink the potion")
+                print("your health score goes up by 2 points")
+                money = money - 2
+                health = health + 2
+                print("Your health is now: ",health)
+                print("Your money is now: ",money)
+                print("you carry on walking up the hill")
+                print("you start to see the sun set as you slowly climb the hill")
+                print("no visible path to follow")
+                print("you hear small foot prints behind you")
+                print("theres a goblin behind you")
+                print("you here his small voice saying give me all your money")
+                print("he trys to slice at your leg")
+                health = health - goblinattackdammage
+                print ("Your health is now: ",health)
+                choice7 = input("do you want to attack him? yes or no(1,2)")
+                if choice7 == "1":
+                    print("you attack the goblin for: ",attackdamage)
+                    goblinhealth = goblinhealth - attackdamage
+                    if (goblinhealth)>0:
+                        choice8 = input("do you want to attack him? yes or no(1,2)")
+                        if choice8 == "1":
+                            print("you attack the goblin for: ",attackdamage)
+                            goblinhealth = goblinhealth - attackdamage
+                    if (goblinhealth)<1:
+                        print("you have killed the goblin")
+
+
+
+            if choice6 == "2":
+                print ("you carry on walking up the hill")
+                print("you start to see the sun set as you slowly climb the hill")
+                print("no visible path to follow")
+                goblinhealth = (12)
+                goblinattackdammage = (3)
+                if goblinhealth == (0):
+                    print("you have defeated the goblin")
+           
+           
+if choice1 == "3":
+    print("you leave the tavern ")
+    print("an old beggar asks you for any spare change")
+    choice9 = input("do you give him one silver piece?yes or no(1,2)")
+    if choice9 == "1":
+        print("he is very greatfull and gives you a health potion")
+        print("he also asks you if you're helping out the town with an army that hs been told is attacking that month")
+        print("he tells you that there is more information at the town hall at the top of the hill")
+        print("you drink the potion")
+        health = health + 1
+        print("Your health is now: ",health)
+        print("you start walking up to the sign to see which direction the town hall is")
+        print("theres a sign saying that the town hall is up the hill, and you start to walk")
+        print("there's a chemist on the side of the road")
+        choice10 = input("there are health potions that hes selling for 2 silver pieces, do you take one or not(1,2)")
+        if choice10 == "1":
+            print("you drink the potion")
+            print("your health score goes up by 2 points")
+            money = money - 2
+            health = health + 2
+            print("Your health is now: ",health)
+            print("Your money is now: ",money)
+            print("you carry on walking up the hill")
+            print("you start to see the sun set as you slowly climb the hill")
+            print("no visible path to follow")
+            print("you hear small foot prints behind you")
+            print("theres a goblin behind you")
+            print("you here his small voice saying give me all your money")
+            print("he trys to slice at your leg")
+            health = health - goblinattackdammage
+            print ("Your health is now: ",health)
+            choice7 = input("do you want to attack him? yes or no(1,2)")
+            if choice7 == "1":
+                print("you attack the goblin for: ",attackdamage)
+                goblinhealth = goblinhealth - attackdamage
+                if (goblinhealth)>0:
+                    choice8 = input("do you want to attack him? yes or no(1,2)")
+                    if choice8 == "1":
+                        print("you attack the goblin for: ",attackdamage)
+                        goblinhealth = goblinhealth - attackdamage
+                    if (goblinhealth)<1:
+                        print("you have killed the goblin")
